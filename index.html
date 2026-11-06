@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Gioco del 15</title>
+    <link rel="preload" as="font" href="Rubik-VariableWeight.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Gioco del 15</h1>
+        
+        <!-- Griglia di gioco -->
+        <div id="board" class="board"></div>
+
+        <!-- Schermata di vittoria con immagine -->
+        <div id="win-screen" class="win-screen">
+            <!-- Puoi sostituire l'URL dell'immagine con una a tua scelta -->
+            <img src="junior.png" alt="Immagine di Vittoria">
+            <div class="win-message">Complimenti! Chi è?</div>
+        </div>
+
+        <button id="shuffle-btn" class="btn">Mescola / Nuova Partita</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
