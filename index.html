@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#101827">
-    <title>Il Gioco del 15</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Memory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-    <main class="game-shell">
-        <header class="topbar">
-            <a class="brand" href="#" aria-label="Gioco del 15, pagina iniziale">
-                <span class="brand-mark">✳</span>
-                <span>manf<span class="brand-light">ry</span></span>
-            </a>
-        </header>
-        <div class="game-container">
-            <h1 id="game-title">Gioco del <span>15.</span></h1>
-            <p class="subtitle">Tocca una tessera libera per spostarla</p>
-            <!-- Griglia di gioco -->
-            <div id="board" class="board"></div>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Memory, pagina iniziale">
+        <span class="brand-mark">✱</span>
+        <span>manf<span class="brand-light">ry</span></span>
+      </a>
+    </header>
 
-            <!-- Schermata di vittoria con immagine -->
-            <div id="win-screen" class="win-screen">
-                <!-- Puoi sostituire l'URL dell'immagine con una a tua scelta -->
-                <!-- <img src="images/junior.png" alt="Immagine di Vittoria"> -->
-                <div class="win-message">Complimenti! <span class="brand-light">Chi è?</span></div>
-                <div>
-                    <span>È <span class="brand-light">amico</span> di Goku</span>
-                </div>
-                <div>
-                    <span>È nato su <span class="brand-light">Namecc</span></span>
-                </div>
-                <div>
-                    <span>La sua tecnica principale è il <span class="brand-light">cannone demoniaco</span></span>
-                </div>
-            </div>
-
-            <button id="shuffle-btn" class="btn" type="button"><span aria-hidden="true">↻</span> Ricomincia</button>
-
+    <section class="intro" aria-labelledby="game-title">
+      <h1 id="game-title">Trova le <span>coppie.</span></h1>
+      <p class="subtitle">Scopri le tessere e abbina le immagini</p>
+    </section>
+    <section class="game-panel" aria-label="Gioco Memory">
+      <div class="game-info" id="game-info">
+        <div class="stat">
+          <span class="stat-label">MOSSE</span>
+          <strong id="moves">0</strong>
         </div>
-    </main>
-    <script src="script.js"></script>
+        <div class="progress-wrap">
+          <div class="progress-copy"><span>PROGRESSO</span><span id="progress-text">0 / 6 coppie</span></div>
+          <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        </div>
+        <button class="restart-btn" id="restart" type="button"><span aria-hidden="true">↻</span> Ricomincia</button>
+      </div>
+      <div class="win-message" id="win-message" role="status" aria-live="polite" hidden>
+        <span class="win-icon">🏆</span>
+        <div>Hai vinto! <strong>Cosa sono le coppie?</strong></div>
+        <button type="button" id="play-again">Gioca ancora</button>
+      </div>
+      <div class="board" id="board" aria-label="12 tessere da abbinare">
+        <!-- Le tessere vengono create da script.js -->
+      </div>
+    </section>
+  </main>
 </body>
-
 </html>
