@@ -48,10 +48,10 @@ function shuffle() {
 }
 
 function checkWin() {
-    if (state.every((value, index) => value === winningState[index])) {
+   // if (state.every((value, index) => value === winningState[index])) {
         boardElement.style.display = 'none';
         winScreenElement.style.display = 'block';
-    }
+   // }
 }
 
 function render() {
